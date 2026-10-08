@@ -7,7 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
 const outDir = path.join(repoRoot, "dist", "zips");
 
-const EXCLUDED = new Set(["dist", "node_modules", ".git", ".github", "templates"]);
+const EXCLUDED = new Set(["dist", "node_modules", ".git", ".github"]);
 
 fs.mkdirSync(outDir, { recursive: true });
 
