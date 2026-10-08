@@ -9,7 +9,7 @@
   },
   "plugins": [
     {
-      "name": "ikrishg/skills",
+      "name": "ikrishg-skills",
       "source": "./",
       "description": "Agent Skills maintained by Krish Gupta.",
       "category": "productivity",
