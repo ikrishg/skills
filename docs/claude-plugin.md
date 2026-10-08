@@ -8,7 +8,7 @@ In Claude Code:
 
 ```text
 /plugin marketplace add ikrishg/skills
-/plugin install skills@ikrishg
+/plugin install ikrishg/skills@ikrishg
 ```
 
 Restart Claude Code or reload plugins when prompted.
