@@ -1,0 +1,21 @@
+{
+  "name": "ikrishg",
+  "owner": {
+    "name": "Krish Gupta",
+    "url": "https://github.com/ikrishg"
+  },
+  "metadata": {
+    "description": "Agent Skills maintained by Krish Gupta."
+  },
+  "plugins": [
+    {
+      "name": "skills",
+      "source": "./",
+      "description": "Agent Skills maintained by Krish Gupta.",
+      "category": "productivity",
+      "tags": [
+        "agent-skills"
+      ]
+    }
+  ]
+}
