@@ -26,6 +26,7 @@ This table is generated from `catalog.ts` and skill frontmatter. Do not edit the
 <!-- BEGIN GENERATED SKILL CATALOG -->
 | Skill | Category | What it does and when to use it |
 | --- | --- | --- |
+| [`hackathon-idea-eval`](./hackathon-idea-eval/SKILL.md) | Product | Score and kill hackathon ideas against one event. Use when comparing candidates, generating them from saved launches, or deciding Build, Rework, or Drop before any code. |
 <!-- END GENERATED SKILL CATALOG -->
 
 ## Add a skill
