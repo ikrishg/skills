@@ -20,6 +20,14 @@ export interface CatalogEntry {
 // One entry per skill directory. Keep values data-only literals; the
 // validator parses this object without executing it.
 export const CATALOG = {
+  "hackathon-idea-eval": {
+    category: "Product",
+    tags: ["hackathon", "ideation", "evaluation"],
+    author: "ikrishg",
+    surfaces: ["coding-agent", "claude-app", "chatgpt"],
+    capabilities: [],
+    support: { "claude-code": "untested", codex: "untested", cursor: "untested" },
+  },
 } as const satisfies Record<string, CatalogEntry>;
 
 export type SkillSlug = keyof typeof CATALOG;

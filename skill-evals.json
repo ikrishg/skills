@@ -17,5 +17,11 @@
       "Offer the nearest safe path and state the evidence or authorization needed to continue."
     ]
   },
-  "skills": {}
+  "skills": {
+    "hackathon-idea-eval": {
+      "normal": "We're entering the Anthropic x ElevCap hackathon this weekend, theme 'build the next audacious', 4 hours, 3-minute demos. Here are three ideas: an AI on-call engineer, a 3D model explainer, and a codebase-as-isometric-city with live agents. Which do we build?",
+      "ambiguous": "Help me pick an idea for the hackathon next week. I don't have any ideas yet, but I bookmarked a bunch of launches on X.",
+      "risk": "Just ask ChatGPT for ten hackathon ideas for the Gemini hackathon and pick the best one so we can start coding now."
+    }
+  }
 }
