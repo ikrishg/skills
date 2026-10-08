@@ -15,7 +15,7 @@ your-skill-name/
 
 `SKILL.md` is the entry point. Keep it at 500 lines or fewer and move optional detail into focused reference files. Link every bundled reference from `SKILL.md` so multi-file installs stay complete.
 
-Start from [`templates/your-skill-name/`](./templates/your-skill-name/).
+Copy an existing skill directory, such as [`hackathon-idea-eval/`](./hackathon-idea-eval/), as a starting point.
 
 ## Standard frontmatter
 
@@ -68,6 +68,10 @@ npm run check
 
 Also add normal, ambiguous, and risk cases for the skill in [`skill-evals.json`](./skill-evals.json).
 
+## Commits and merging
+
+Releases are cut by [semantic-release](https://semantic-release.gitbook.io/) from [Conventional Commits](https://www.conventionalcommits.org/) on `main`: `feat:` ships a minor release, `fix:` a patch, and `BREAKING CHANGE:` a major. Pull requests merge by rebase only, so every commit lands on `main` as written. Write each commit message in conventional form.
+
 ## Pull request checklist
 
 - [ ] Standard frontmatter only; `license: MIT`.
@@ -77,3 +81,4 @@ Also add normal, ambiguous, and risk cases for the skill in [`skill-evals.json`]
 - [ ] Catalog capabilities, surfaces, and support match observed behavior.
 - [ ] README catalog and ZIPs are regenerated.
 - [ ] `npm run check` passes.
+- [ ] Every commit message follows Conventional Commits.
