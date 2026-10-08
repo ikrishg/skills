@@ -16,11 +16,8 @@ Claude Code, as a plugin that updates itself:
 Any runtime, as editable copies through [skills.sh](https://skills.sh):
 
 ```bash
-# Codex
-npx skills add ikrishg/skills --skill <slug> -g -a codex -y
-
-```bash
 npx skills add ikrishg/skills --skill <slug> -g -y
+```
 
 Omit `--skill <slug>` to install every skill. Pick one method per runtime, because installing both gives you every skill twice. See the [Claude Code plugin guide](docs/claude-plugin.md) for validation.
 
