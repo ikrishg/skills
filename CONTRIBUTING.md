@@ -1,84 +1,40 @@
-# Contributing Agent Skills
+# Contributing
 
-A contribution should be a useful workflow, a portable package, and an honest statement of where it has been tested.
-
-## Repository contract
-
-Each skill lives in a lowercase, hyphenated directory whose name matches the frontmatter `name`:
+## Layout
 
 ```text
-your-skill-name/
-├── SKILL.md
-└── references/       # optional
-    └── guide.md
+skills/
+└── <bucket>/
+    ├── README.md            # lists the bucket's skills
+    └── <skill-name>/
+        ├── SKILL.md
+        ├── agents/
+        │   └── openai.yaml  # Codex display name and invocation policy
+        └── REFERENCE.md     # optional, linked from SKILL.md
 ```
 
-`SKILL.md` is the entry point. Keep it at 500 lines or fewer and move optional detail into focused reference files. Link every bundled reference from `SKILL.md` so multi-file installs stay complete.
+Pick an existing bucket (`product/` today) or add one with its own `README.md`.
 
-Copy an existing skill directory, such as [`hackathon-idea-eval/`](./hackathon-idea-eval/), as a starting point.
-
-## Standard frontmatter
+## Frontmatter
 
 ```yaml
 ---
-name: your-skill-name
-description: Describe the workflow outcome clearly. Use when the user or project needs a specific result.
+name: skill-name
+description: What the skill does. Use when the user needs a specific result.
 license: MIT
 ---
 ```
 
-Required:
+- `name` is lowercase and hyphenated, and matches the directory.
+- `description` says what the skill does and when to use it.
+- For a skill that should run only when you type it, add `disable-model-invocation: true` here and `policy: { allow_implicit_invocation: false }` in `agents/openai.yaml`, and list it under **User-invoked** in the bucket README.
 
-- `name`: lowercase, hyphenated, matches the directory, at most 64 characters.
-- `description`: at most 200 characters; include an explicit `Use when ...` clause.
-- `license`: exactly `MIT`.
+## Register it
 
-Optional standard fields: `compatibility`, `metadata`, `allowed-tools`.
-
-Do not put `category`, `tags`, or `author` in skill frontmatter. Those belong in [`catalog.ts`](./catalog.ts).
-
-## Catalog metadata
-
-Add exactly one catalog entry:
-
-```ts
-{
-  category: "workflow",
-  tags: ["example", "portable"],
-  author: "ikrishg",
-  surfaces: ["coding-agent"],
-  capabilities: ["filesystem"],
-  support: {
-    "claude-code": "untested",
-    codex: "untested",
-    cursor: "untested",
-  },
-}
-```
-
-Use `tested` only after a real runtime smoke test is recorded in [`runtime-verification.json`](./runtime-verification.json).
-
-## Validate locally
-
-```bash
-npm install
-npm run catalog:sync
-npm run check
-```
-
-Also add normal, ambiguous, and risk cases for the skill in [`skill-evals.json`](./skill-evals.json).
+1. Add `./skills/<bucket>/<skill-name>` to `skills` in [`.claude-plugin/plugin.json`](./.claude-plugin/plugin.json).
+2. Add one line for it in the bucket README.
+3. Run `npm install` once, then `npm run check`.
 
 ## Commits and merging
 
 Releases are cut by [semantic-release](https://semantic-release.gitbook.io/) from [Conventional Commits](https://www.conventionalcommits.org/) on `main`: `feat:` ships a minor release, `fix:` a patch, and `BREAKING CHANGE:` a major. Pull requests merge by rebase only, so every commit lands on `main` as written. Write each commit message in conventional form.
-
-## Pull request checklist
-
-- [ ] Standard frontmatter only; `license: MIT`.
-- [ ] Description explains what and when in 200 characters or fewer.
-- [ ] `SKILL.md` is no longer than 500 lines.
-- [ ] Every relative link resolves and every bundled reference is reachable.
-- [ ] Catalog capabilities, surfaces, and support match observed behavior.
-- [ ] README catalog and ZIPs are regenerated.
-- [ ] `npm run check` passes.
-- [ ] Every commit message follows Conventional Commits.
