@@ -1,5 +1,5 @@
 {
-  "name": "ikrishg/skills",
+  "name": "ikrishg-skills",
   "version": "0.1.0",
   "description": "Agent Skills maintained by Krish Gupta.",
   "author": {
@@ -12,6 +12,6 @@
     "agent-skills"
   ],
   "skills": [
-    "./hackathon-idea-eval"
+    "./skills/product/hackathon-idea-eval"
   ]
 }
