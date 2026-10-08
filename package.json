@@ -1,5 +1,5 @@
 {
-  "name": "skills",
+  "name": "@ikrishg/skills",
   "private": true,
   "license": "MIT",
   "version": "0.1.0",
@@ -10,7 +10,8 @@
     "zips:build": "node scripts/build-zips.mjs",
     "validate": "node scripts/validate.mjs",
     "check": "npm test && npm run zips:build && npm run validate",
-    "skills:check": "node scripts/check-skill.mjs . --collection"
+    "skills:check": "node scripts/check-skill.mjs . --collection",
+    "release": "semantic-release"
   },
   "bin": {
     "skills-check": "scripts/check-skill.mjs"
@@ -22,5 +23,15 @@
   ],
   "dependencies": {
     "gray-matter": "^4.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikrishg/skills.git"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^7.0.0",
+    "@semantic-release/exec": "^7.1.0",
+    "@semantic-release/git": "^11.0.1",
+    "semantic-release": "^25.0.9"
   }
 }
